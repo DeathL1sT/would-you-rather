@@ -1,0 +1,13 @@
+.content {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  .login {
+    width: 650px;
+    margin: 2rem;
+    border: 1px solid#ccc;
+    border-radius: 20px;
+  }
+}

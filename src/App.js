@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "antd/dist/antd.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUsers } from "./store/usersSlice";
+import { fetchQuestion } from "./store/questionSlice";
+import Header from "./components/header/Header";
+import HomePage from "./components/pages/HomePage";
+import "./App.scss";
+import Login from "./components/login/Login";
 
 function App() {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.user !== "");
+  useEffect(() => {
+    dispatch(fetchUsers());
+    dispatch(fetchQuestion());
+  }, []);
+
+  if (!isLoggedIn) {
+    return <Login />;
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <HomePage />
+      </main>
     </div>
   );
 }
-
 export default App;

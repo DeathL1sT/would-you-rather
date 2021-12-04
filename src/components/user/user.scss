@@ -1,0 +1,35 @@
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .line {
+    padding: 20px;
+
+    border-right: 1px solid #ccc;
+    .avatar {
+      width: 120px;
+      height: 140px;
+      border-radius: 12px;
+    }
+  }
+
+  .selection {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    bottom: -3rem;
+    select {
+      width: 200px;
+    }
+    button {
+      display: flex;
+      cursor: pointer;
+      background-color: aliceblue;
+      border: none;
+      padding: 1px;
+    }
+  }
+}

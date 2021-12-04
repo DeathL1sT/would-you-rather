@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid#ccc;
+  border-radius: 12px;
+  width: 400px;
+  margin: 20px;
+  padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  li {
+    list-style: none;
+  }
+  .content {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    width: 350px;
+    p {
+      padding: 7px;
+    }
+    .avatar {
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 5px;
+      margin: 0px;
+      padding: 0px;
+      width: 65px;
+      position: relative;
+      top: -60px;
+      left: -25px;
+    }
+  }
+
+  button {
+    width: 250px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgb(15, 1, 22);
+    color: aliceblue;
+  }
+}
