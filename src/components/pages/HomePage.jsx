@@ -1,10 +1,13 @@
 import React from "react";
-import QuestionCard from "../cards/QuestionCard";
+import QuestionBoll from "../cards/QuestionBoll";
+
+import QuestionTable from "../tabQuestion/QuestionTable";
 import "./home.scss";
 const HomePage = () => {
   return (
     <main>
-      <QuestionCard />
+      <QuestionTable />
+      <QuestionBoll />
     </main>
   );
 };
