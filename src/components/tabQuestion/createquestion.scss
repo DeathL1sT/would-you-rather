@@ -1,0 +1,35 @@
+.newQues {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  width: 300px;
+  height: 200px;
+  .title {
+    padding: 5px;
+  }
+
+  .text {
+    input {
+      display: flex;
+      border: 1px solid#ccc;
+      border-radius: 5px;
+      width: 250px;
+    }
+  }
+
+  button {
+    width: 200px;
+    background-color: rgb(6, 0, 22);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: aliceblue;
+    cursor: pointer;
+  }
+}

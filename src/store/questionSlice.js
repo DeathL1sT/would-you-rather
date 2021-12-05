@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { _getQuestions } from "../Data";
+import { _getQuestions, _saveQuestion } from "../Data";
 
 export const fetchQuestion = createAsyncThunk(
   "question/requestquestion",
@@ -7,6 +7,13 @@ export const fetchQuestion = createAsyncThunk(
     const questions = await _getQuestions();
 
     return questions;
+  }
+);
+
+export const addQuestion = createAsyncThunk(
+  "question/add",
+  async (arg, thunkAPI) => {
+    return await _saveQuestion(arg);
   }
 );
 
@@ -20,6 +27,10 @@ const questionSlice = createSlice({
     });
 
     builder.addCase(fetchQuestion.rejected, (state, action) => {});
+
+    builder.addCase(addQuestion.fulfilled, (state, action) => {
+      state.questions[action.payload.id] = action.payload;
+    });
   },
 });
 

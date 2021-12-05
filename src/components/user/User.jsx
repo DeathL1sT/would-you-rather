@@ -25,7 +25,7 @@ const User = () => {
           Sign In
         </button>
         <div>
-          <select onChange={(e) => setUser(e.target.value)} defaultValue="">
+          <select onChange={(e) => setUser(e.target.value)} value={user}>
             <option disabled value="">
               Choose a User
             </option>

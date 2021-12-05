@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { _getUsers } from "../Data.js";
+import { addQuestion } from "./questionSlice.js";
 
 export const fetchUsers = createAsyncThunk(
   "users/requestUsers",
@@ -19,6 +20,10 @@ export const usersSlice = createSlice({
     });
 
     builder.addCase(fetchUsers.rejected, (state, action) => {});
+
+    builder.addCase(addQuestion.fulfilled, (state, action) => {
+      state.users[action.payload.author].questions.push(action.payload.id);
+    });
   },
 });
 
