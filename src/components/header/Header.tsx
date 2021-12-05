@@ -5,12 +5,15 @@ import {
   DashboardOutlined,
   LogoutOutlined,
 } from "@ant-design/icons";
+import { Store } from "../../store/store";
 import { Link } from "react-router-dom";
 import "./header.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { authAction } from "../../store/authSlice";
 const Header = () => {
-  const user = useSelector((state) => state.users.users[state.auth.user]);
+  const user = useSelector(
+    (state: Store) => state.users.users[state.auth.user]
+  );
 
   const dispatch = useDispatch();
   const handleLogOut = () => {
@@ -26,15 +29,15 @@ const Header = () => {
       <div className="link">
         <button>
           <HomeOutlined style={{ color: "#81e309", fontSize: "18px" }} />
-          <Link to="">Home</Link>
+          <Link to="/">Home</Link>
         </button>
         <button>
           <FormOutlined style={{ color: "gold", fontSize: "18px" }} />
-          <Link to="">New Question</Link>
+          <Link to="/">New Question</Link>
         </button>
         <button>
           <DashboardOutlined style={{ color: "red", fontSize: "18px" }} />
-          <Link to="">Leader Board</Link>
+          <Link to="/">Leader Board</Link>
         </button>
       </div>
 

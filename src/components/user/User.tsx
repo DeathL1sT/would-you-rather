@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Store } from "../../store/store";
 import avatar from "../asests/02.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../../store/authSlice";
@@ -6,7 +7,7 @@ import { authAction } from "../../store/authSlice";
 import "./user.scss";
 import { LoginOutlined } from "@ant-design/icons";
 const User = () => {
-  const users = useSelector((state) => state.users.users);
+  const users = useSelector((state: Store) => state.users.users);
   const [user, setUser] = useState("");
   const dispatch = useDispatch();
 
@@ -25,7 +26,11 @@ const User = () => {
           Sign In
         </button>
         <div>
-          <select onChange={(e) => setUser(e.target.value)} value={user}>
+          <select
+            title="User"
+            onChange={(e) => setUser(e.target.value)}
+            value={user}
+          >
             <option disabled value="">
               Choose a User
             </option>

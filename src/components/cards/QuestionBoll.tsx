@@ -1,12 +1,15 @@
 import React from "react";
+import { Store } from "../../store/store";
+import Question from "../../models/question";
 import { useSelector } from "react-redux";
+
 const QuestionBoll = () => {
-  const user = useSelector((state) => state.users.users);
-  const questions = useSelector((state) => state.question.questions);
+  const user = useSelector((state: Store) => state.auth.user);
+  const questions = useSelector((state: Store) => state.questions.questions);
 
   return (
     <div className="boll">
-      {Object.values(questions)
+      {/* {Object.values(questions)
         .filter((q) => q.id === q.author.includes(user.id))
         .map((q) => (
           <li key={q.id}>
@@ -21,7 +24,7 @@ const QuestionBoll = () => {
               </lable>
             </div>
           </li>
-        ))}
+        ))} */}
       <div>
         <div className="lable">{} Asks:</div>
         <div className="con">
@@ -30,7 +33,7 @@ const QuestionBoll = () => {
 
             <button>Submit</button>
             <div className="ava">
-              <img />
+              <img alt="" />
             </div>
           </div>
         </div>

@@ -1,21 +1,22 @@
 import React from "react";
 import { useState } from "react";
+import { Store } from "../../store/store";
 import { useDispatch, useSelector } from "react-redux";
-import { addQuestion } from "../../store/questionSlice";
+import { addQuestion } from "../../store/questionsSlice";
 import "./createquestion.scss";
 
 const CreateQuestion = () => {
   const [optionOne, setOptionOne] = useState("");
-  const [optionTow, setOptionTow] = useState("");
+  const [optionTwo, setOptionTwo] = useState("");
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state: Store) => state.auth.user);
 
   const handelAddQuestion = () => {
     dispatch(
       addQuestion({
         author: user,
         optionOneText: optionOne,
-        optionTwoText: optionTow,
+        optionTwoText: optionTwo,
       })
     );
   };
@@ -29,16 +30,18 @@ const CreateQuestion = () => {
           onChange={(e) => {
             setOptionOne(e.target.value);
           }}
+          placeholder="First option"
           type="text"
           value={optionOne}
         />
         <div>OR</div>
         <input
           onChange={(e) => {
-            setOptionTow(e.target.value);
+            setOptionTwo(e.target.value);
           }}
+          placeholder="Second option"
           type="text"
-          value={optionTow}
+          value={optionTwo}
         />
       </div>
       <button onClick={handelAddQuestion}>Submit</button>
