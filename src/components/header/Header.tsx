@@ -27,23 +27,25 @@ const Header = () => {
       </div>
 
       <div className="link">
-        <button>
+        <Link to="/">
           <HomeOutlined style={{ color: "#81e309", fontSize: "18px" }} />
-          <Link to="/">Home</Link>
-        </button>
-        <button>
+          Home
+        </Link>
+
+        <Link to="/createquestion">
           <FormOutlined style={{ color: "gold", fontSize: "18px" }} />
-          <Link to="/">New Question</Link>
-        </button>
-        <button>
+          New Question
+        </Link>
+
+        <Link to="/leaderboard">
           <DashboardOutlined style={{ color: "red", fontSize: "18px" }} />
-          <Link to="/">Leader Board</Link>
-        </button>
+          Leader Board
+        </Link>
       </div>
 
       <div className="info">
         <div className="img">
-          <img src="" alt=""></img>
+          <img src={user.avatarURL} alt=""></img>
         </div>
 
         <div className="welcome">Welcome, {user.name}</div>

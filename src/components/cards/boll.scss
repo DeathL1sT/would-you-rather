@@ -1,0 +1,55 @@
+.boll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: 20px;
+  .contain-bol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 50px;
+    .con {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 320px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px;
+
+      .ques {
+        form {
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          & label {
+            margin: 5px;
+          }
+          input {
+            display: flex;
+            position: relative;
+            bottom: -20px;
+            left: -15px;
+          }
+          button {
+            background-color: black;
+            color: aliceblue;
+            font-weight: bold;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin: 10px;
+          }
+        }
+      }
+    }
+  }
+}

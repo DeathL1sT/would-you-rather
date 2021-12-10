@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { _getUsers } from "../Data";
-import { addQuestion } from "./questionsSlice";
+import { addQuestion, saveAnswer } from "./questionsSlice";
 import User from "../models/user";
 
 type UsersMap = { [key: string]: User };
@@ -29,6 +29,11 @@ export const usersSlice = createSlice({
 
     builder.addCase(addQuestion.fulfilled, (state, action) => {
       state.users[action.payload.author].questions.push(action.payload.id);
+    });
+
+    builder.addCase(saveAnswer.fulfilled, (state, action) => {
+      const { authedUser, qid, answer } = action.payload;
+      state.users[authedUser].answers[qid] = answer;
     });
   },
 });

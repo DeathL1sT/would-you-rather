@@ -1,0 +1,20 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .click {
+    justify-content: center;
+    margin: 15px;
+
+    button {
+      border: 1px solid#ccc;
+      border-radius: 5px;
+      font-weight: bold;
+      background-color: black;
+      color: aliceblue;
+      padding: 8px;
+    }
+  }
+}

@@ -8,8 +8,6 @@ const HomePage = () => {
   return (
     <main>
       <QuestionTable />
-      <QuestionBoll />
-      <CreateQuestion />
     </main>
   );
 };

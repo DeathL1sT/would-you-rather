@@ -1,13 +1,17 @@
-.content {
+.login-content {
+  width: 100%;
+  height: 100vh;
   display: flex;
-
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   .login {
-    width: 650px;
-    margin: 2rem;
-    border: 1px solid#ccc;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .lable {
+      font-size: large;
+    }
   }
 }

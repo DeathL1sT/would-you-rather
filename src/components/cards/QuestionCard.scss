@@ -10,24 +10,29 @@
   padding: 10px;
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
-
-  .content {
+  .con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
     border: 1px solid #ccc;
-    border-radius: 12px;
-    width: 350px;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+  }
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     p {
       padding: 7px;
-    }
-    .avatar {
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      padding: 5px;
-      margin: 0px;
-      padding: 0px;
-      width: 65px;
-      position: relative;
-      top: -60px;
-      left: -25px;
     }
   }
 

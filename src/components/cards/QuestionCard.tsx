@@ -2,6 +2,7 @@ import React from "react";
 import User from "../../models/user";
 import Question from "../../models/question";
 import "./QuestionCard.scss";
+import { Link } from "react-router-dom";
 
 type Props = {
   q: Question;
@@ -11,8 +12,9 @@ type Props = {
 const QuestionCard = ({ q, user }: Props) => {
   return (
     <div className="card">
-      <div>
-        <div className="title">{user.name} Asks:</div>
+      <img src={user.avatarURL} alt="" />
+      <div className="title">{user.name} Asks:</div>
+      <div className="con">
         <div className="content">
           <div className="question">
             <span>Would You Rather</span>
@@ -21,10 +23,10 @@ const QuestionCard = ({ q, user }: Props) => {
               <br />
               {q.optionTwo.text}
             </p>
-            <button>View Poll</button>
-            <div className="avatar">
-              <img alt="" />
-            </div>
+            {}
+            <Link to={"/question/" + q.id}>
+              <button>View Poll</button>
+            </Link>
           </div>
         </div>
       </div>

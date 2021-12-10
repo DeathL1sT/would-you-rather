@@ -2,14 +2,15 @@ import React from "react";
 import User from "../user/User";
 
 import "./login.scss";
-import UserLogIn from "./UserLogIn";
 
 const Login = () => {
   return (
-    <div className="content">
+    <div className="login-content">
       <div className="login">
-        <UserLogIn />
-        <User />
+        <p className="lable">Please Sign In For Game</p>
+        <div className="bord">
+          <User />
+        </div>
       </div>
     </div>
   );
